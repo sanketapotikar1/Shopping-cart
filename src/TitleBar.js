@@ -1,6 +1,5 @@
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import React from "react";
-import { Routes, Route, Link, Navigate, useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Badge from "@mui/material/Badge";
 import AddIcon from "@mui/icons-material/Add";
