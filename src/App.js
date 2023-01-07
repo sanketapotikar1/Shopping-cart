@@ -1,7 +1,10 @@
 import "./App.css";
 import { ShoppingHome} from "./ShoppingHome"
+import { useState } from "react";
 
 function App() {
+
+
   const product_info = [
     {
       Product_name: "Headphone",
@@ -47,8 +50,10 @@ function App() {
 
   ];
 
+  const [productList, setProductList]= useState(product_info);
+
   return (
-    <ShoppingHome product_info={product_info}/>
+    <ShoppingHome productList={productList} setProductList={setProductList} />
   );
 }
 

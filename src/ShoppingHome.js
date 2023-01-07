@@ -1,21 +1,40 @@
-import { Product } from "./Product";
-import { TitleBar } from "./TitleBar";
-import React,{useState} from "react";
+import React from "react";
+import { Routes, Route, Link, Navigate, useNavigate } from "react-router-dom";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Button from "@mui/material/Button";
+import { AddProduct } from "./AddProduct";
+import { HomeScreen } from "./HomeScreen";
 
-export function ShoppingHome({ product_info }) {
-  const [productCount, setProductCount] = useState(0);
+export function ShoppingHome({ productList,setProductList }) {
+  const Navigate = useNavigate();
   return (
-    <div className="App">
-      <TitleBar productCount={productCount} />
+    <>
 
-      {/* // for single Product */}
-      {/* <Product Product_name={product_info.Product_name} Price={product_info.Price} Product_picture={product_info.Product_picture}  /> */}
-      {/* <Product  product={product_info} /> */}
-      <div className="App">
-        {product_info.map((pd) => (
-          <Product product={pd} productCount={productCount} setProductCount={setProductCount}/>
-        ))}
-      </div>
-    </div>
+      <AppBar position="static">
+        <Toolbar>
+          <Button color="inherit" onClick={() => Navigate("/")}>
+            Home
+          </Button>
+          <Button color="inherit" onClick={() => Navigate("/AddProduct")}>
+            Add Product
+          </Button>
+        </Toolbar>
+      </AppBar>
+
+      <section className="section-container">
+        <Routes>
+          <Route
+            path="/"
+            element={<HomeScreen productList={productList} />}
+          />
+        </Routes>
+        <Routes>
+          <Route path="/AddProduct" element={<AddProduct productList={productList} setProductList={setProductList} />} />
+        </Routes>
+      </section>
+    </>
   );
 }
+
+
