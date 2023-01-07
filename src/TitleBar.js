@@ -5,20 +5,14 @@ import Badge from "@mui/material/Badge";
 import AddIcon from "@mui/icons-material/Add";
 
 export function TitleBar({ productCount }) {
-
   return (
     <>
       <div className="title-bar">
         <div className="Add-form">
-          <Button
-            variant="outlined"
-            startIcon={<AddIcon />}
-           
-          >
+          <Button variant="outlined" startIcon={<AddIcon />}>
             Add Product
           </Button>
         </div>
-        
 
         <div className="title">
           <h1>Shop in style</h1>
@@ -36,5 +30,3 @@ export function TitleBar({ productCount }) {
     </>
   );
 }
-
-
