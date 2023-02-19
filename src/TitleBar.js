@@ -1,15 +1,21 @@
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Badge from "@mui/material/Badge";
 import AddIcon from "@mui/icons-material/Add";
 
 export function TitleBar({ productCount }) {
+  const Navigate = useNavigate();
   return (
     <>
       <div className="title-bar">
         <div className="Add-form">
-          <Button variant="outlined" startIcon={<AddIcon />}>
+          <Button
+            onClick={() => Navigate("/AddProduct")}
+            variant="outlined"
+            startIcon={<AddIcon />}
+          >
             Add Product
           </Button>
         </div>
